@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { login, register } from "../controllers/auth.contoller.js"; //estamos llamando desde routers
+import { login, register, logout } from "../controllers/auth.contoller.js"; //estamos llamando desde routers
 
 //poder crear peticiones post, get, delete y demas 
-const router = Router()
+const router = Router();
 
-router.post('/register', register)
-router.post('/login', login)
+router.post('/register', register);
 
-export default router
+router.post('/login', login);
+
+router.post('/logout', logout);
+
+export default router;
