@@ -22,4 +22,4 @@ const userSchema = new mongoose.Schema({
 })
 
 // se crea un modelo el cual indica como se van a guardar dichos datos en mongodb e interactuar con ellos (pluraliza users)
-export default mongoose.model('user', userSchema)
+export default mongoose.model('User', userSchema)
