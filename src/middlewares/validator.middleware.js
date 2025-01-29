@@ -5,6 +5,6 @@ export const validateSchema = (schema) => (req, res, next) => { //con esto se ej
     } catch (error) {
         return res
         .status(400)
-        .json({ error: error.errors.map((error) => error.message) }); //solo me pide los campos requeridos
+        .json(error.errors.map((error) => error.message)); //solo me pide los campos requeridos
     }
 };

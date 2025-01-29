@@ -6,6 +6,9 @@ export const register = async (req, res) => {
     const {email, password, username} = req.body; //va a hacer los datos que el cliente envia 
 
     try {
+        const userFound = await User.findOne({ email });
+        if (userFound) return res.status(400).json(['the email is already in use']); //retorna mensaje si el usuario ya esta creado
+
         const passwordHash = await bcrypt.hash(password, 10); // encriptamos la contraseña con caracteres 
 
         const newUser = new User ({    // se crea un nuevo usuario
