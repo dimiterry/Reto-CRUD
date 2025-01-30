@@ -1,13 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
 import { useEffect } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function RegistroPage() {
-    const { 
-        register, 
-        handleSubmit, 
-        formState: {errors},
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
     } = useForm();
     const { signup, isAuthenticated, errors: registerErrors } = useAuth();
     const navigate = useNavigate();
@@ -30,8 +30,8 @@ function RegistroPage() {
                 ))
             }
             <form onSubmit={onSubmit}>
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     {...register('username', { required: true })}
                     className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                     placeholder='Username'
@@ -40,8 +40,8 @@ function RegistroPage() {
                     <p className='text-red-500'>Username is required</p>
                 )}
 
-                <input 
-                    type="email" 
+                <input
+                    type="email"
                     {...register('email', { required: true })}
                     className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                     placeholder='Email'
@@ -50,8 +50,8 @@ function RegistroPage() {
                     <p className='text-red-500'>Email is required</p>
                 )}
 
-                <input 
-                    type="password" 
+                <input
+                    type="password"
                     {...register('password', { required: true })}
                     className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                     placeholder='Password'
@@ -62,6 +62,12 @@ function RegistroPage() {
 
                 <button type='submit'>Register</button>
             </form>
+
+            <p className='flex gap-x-2 justify-between'>
+                Have an account yet? {" "}
+                <Link to='/login'
+                className='text-sky-500'>Login</Link>
+            </p>
         </div>
     );
 }
