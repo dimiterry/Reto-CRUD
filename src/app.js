@@ -9,7 +9,8 @@ import tasksRouters from './routers/tasks.routes.js';
 const app = express();
 
 app.use(cors({ //esto permite que otro puerto conecte a la base de datos
-    origin: 'http://localhost:5173' // esta opcion indica que solo 5173 se puede conectar
+    origin: 'http://localhost:5173', // esta opcion indica que solo 5173 se puede conectar
+    credentials: true
 }));
 app.use(morgan('dev'));
 app.use(express.json()); // se usa para que el back entienda el formato json y reciba el dato

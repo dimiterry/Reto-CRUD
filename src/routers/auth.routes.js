@@ -3,7 +3,8 @@ import {
  login,
  register,
  logout,
- profile
+ profile,
+ verifyToken,
 } from "../controllers/auth.contoller.js"; //estamos llamando desde routers
 import { authRequired } from "../middlewares/validateToken.js";
 import { validateSchema } from "../middlewares/validator.middleware.js"; //importo el validate schema 
@@ -16,6 +17,8 @@ router.post('/register', validateSchema(registerSchema), register); // va a requ
 router.post('/login', validateSchema(loginSchema), login); // antes de loguear valida datos 
 
 router.post('/logout', logout);
+
+router.get('/verify', verifyToken);
 
 router.get('/profile', authRequired, profile);
 
