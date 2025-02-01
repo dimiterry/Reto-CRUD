@@ -66,7 +66,7 @@ function RegistroPage() {
             <p className='flex gap-x-2 justify-between'>
                 Have an account yet? {" "}
                 <Link to='/login'
-                className='text-sky-500'>Login</Link>
+                    className='text-sky-500'>Login</Link>
             </p>
         </div>
     );
