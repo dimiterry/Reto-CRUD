@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
-import { Link, UNSAFE_getPatchRoutesOnNavigationFunction, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function LoginPage() {
@@ -29,7 +29,7 @@ function LoginPage() {
           </div>
         ))
         }
-        <h1 className='text-2xl font-bold'>Login</h1>
+        <h1 className='text-3xl font-bold my-2'>Login</h1>
 
         <form onSubmit={onSubmit}>
           <input
@@ -50,7 +50,9 @@ function LoginPage() {
             <p className='text-red-500'>Password is required</p>
           )}
 
-          <button type='submit'>Login</button>
+          <button type='submit'
+          className='bg-sky-500 text-white px-4 py-2 rounded-md'
+          >Login</button>
         </form>
 
         <p className='flex gap-x-2 justify-between'>
