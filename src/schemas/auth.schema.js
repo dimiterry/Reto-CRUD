@@ -1,5 +1,5 @@
-import { z } from 'zod';
-
+import { z } from 'zod'; //Este archivo usa la librería Zod para validar los datos que se envían al backend durante el registro y inicio de sesión.
+//estos esquemas ayudan a definir y validar los datos la estructura y el formato 
 export const registerSchema = z.object({ // sirve para validar el registro
     username: z.string({
         required_error: 'Username is required',

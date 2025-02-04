@@ -1,6 +1,6 @@
 export const validateSchema = (schema) => (req, res, next) => { //con esto se ejecuta la validacion
     try { // se hace este try para que parse no tumbe la pagina y haga la validacion si no accede laza un error
-        schema.parse(req.body); // este lo va a estar comparando con el body
+        schema.parse(req.body); // este lo va a estar comparando con el body para que coincida
         next();
     } catch (error) {
         return res

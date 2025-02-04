@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 }, {
-    timestamps: true //agrega a la base de datos la fecha de ingreso
+    timestamps: true //agrega a la base de datos la fecha de ingreso createAt updateAt
 })
 
 // se crea un modelo el cual indica como se van a guardar dichos datos en mongodb e interactuar con ellos (pluraliza users)

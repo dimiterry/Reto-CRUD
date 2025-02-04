@@ -1,1 +1,2 @@
-export const TOKEN_SECRET = 'some secret key'
+export const TOKEN_SECRET = 'some secret key' // se usa para firmar el token y validarlo por parte del back
+// lo que hace que es que si corrompen el token el back no dejara entrar a las rutas protegidas
