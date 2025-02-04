@@ -12,13 +12,14 @@ import ProtectedRoute from './ProtectedRoute';
 import { TaskProvider } from './context/TasksContext';
 import Navbar from './components/Navbar';
 
+//app gestiona la navegacion entre paginas 
 function App() { //estas son las rutas de las paginas 
   return (
-    <AuthProvider>
-      <TaskProvider>
-        <BrowserRouter>
+    <AuthProvider> {/*toda la app tenga acceso a los metodos de autenticacion*/}
+      <TaskProvider> {/*proporciona el contexto de las tarea*/}
+        <BrowserRouter> {/*envuelve la app para permitir la navegacion*/}
           <main className='container mx-auto px-10'>
-            <Navbar />
+            <Navbar /> {/*muestra la barra de navegacion*/}
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/login' element={<LoginPage />} />

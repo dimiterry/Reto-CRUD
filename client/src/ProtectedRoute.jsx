@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom"; //navigate redirige al usuario si no esta autenticado, outlet renderiza la pagina
 import { useAuth } from "./context/AuthContext";
 import { useState, useEffect } from "react";
 
@@ -13,7 +13,7 @@ function ProtectedRoute() {
   }, [loading, isAuthenticated]);
 
   if (loading) return <h1>Loading...</h1>;
-  if (shouldRedirect) return <Navigate to="/login" replace />;
+  if (shouldRedirect) return <Navigate to="/login" replace />; //redirige el usuario a login 
 
   return <Outlet />;
 }

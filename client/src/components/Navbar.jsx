@@ -26,6 +26,7 @@ function Navbar() {
                         <li>
                             <Link
                                 to='/'
+                                className="bg-indigo-500 px-4 py-1 rounded-sm"
                                 onClick={() => {
                                     logout();
                                 }}
