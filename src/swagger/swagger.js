@@ -10,14 +10,15 @@ const options = {
             contact: {
                 name: 'Jorge Osorno'
             },
-            servers:{
-                url: 'http://localhost:4000',
-                description: 'Local server'
-            },
         },
-
+        servers: [
+            {
+                url: 'http://localhost:4000/api', // Aqui se añade la ruta y el prefijo 
+                description: 'Local server with API'
+            },
+        ],
     },
-    apis: ['./src/routes/*.js'], // files containing annotations as above
+    apis: ['./src/routers/*.js', './src/schemas/*.js'], // pongo las carpetas de donde entran swagger por la info
 };
 
 const specs = swaggerJSDoc(options);

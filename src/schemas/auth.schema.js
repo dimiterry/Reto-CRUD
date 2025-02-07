@@ -1,18 +1,47 @@
-import { z } from 'zod'; //Este archivo usa la librería Zod para validar los datos que se envían al backend durante el registro y inicio de sesión.
-//estos esquemas ayudan a definir y validar los datos la estructura y el formato 
-export const registerSchema = z.object({ // sirve para validar el registro
+import { z } from 'zod';
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Register:
+ *       type: object
+ *       required:
+ *         - username
+ *         - email
+ *         - password
+ *       properties:
+ *         username:
+ *           type: string
+ *           description: Nombre de usuario
+ *           example: johndoe
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: Correo electrónico válido
+ *           example: johndoe@example.com
+ *         password:
+ *           type: string
+ *           description: Contraseña debe tener al menos 6 caracteres
+ *           example: password123
+ *       example:
+ *         username: johndoe
+ *         email: johndoe@example.com
+ *         password: password123
+ */
+export const registerSchema = z.object({
     username: z.string({
         required_error: 'Username is required',
     }),
-    email: z.
-        string({  //pide que el dato introducido sea un email 
+    email: z
+        .string({
             required_error: 'Email is required',
         })
         .email({
             message: 'Email is not valid',
         }),
-    password: z.
-        string({
+    password: z
+        .string({
             required_error: 'Password is required',
         })
         .min(6, {
@@ -20,7 +49,30 @@ export const registerSchema = z.object({ // sirve para validar el registro
         }),
 });
 
-export const loginSchema = z.object({ //sirve para validar el login
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Login:
+ *       type: object
+ *       required:
+ *         - email
+ *         - password
+ *       properties:
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: Correo electrónico válido
+ *           example: johndoe@example.com
+ *         password:
+ *           type: string
+ *           description: Contraseña debe tener al menos 6 caracteres
+ *           example: password123
+ *       example:
+ *         email: johndoe@example.com
+ *         password: password123
+ */
+export const loginSchema = z.object({
     email: z
         .string({
             required_error: "Email is required",
