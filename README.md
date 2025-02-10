@@ -90,9 +90,9 @@ Cada solicitud protegida incluye el encabezado:
 Authorization: TOKEN_SECRET
 El backend valida el token antes de acceder a las rutas protegidas.
 
-#📌 Formato de peticiones (JSON)
-###🔹 Registro de Usuario (POST /api/register)
-####📩 Body (JSON)
+# 📌 Formato de peticiones (JSON)
+### 🔹 Registro de Usuario (POST /api/register)
+#### 📩 Body (JSON)
 
 ```
 {
@@ -102,7 +102,7 @@ El backend valida el token antes de acceder a las rutas protegidas.
 }
 ```
 
-####📤 Respuesta Exitosa (201 - Created)
+#### 📤 Respuesta Exitosa (201 - Created)
 
 ```
 {
@@ -117,12 +117,12 @@ El backend valida el token antes de acceder a las rutas protegidas.
 }
 
 ```
-####📛 Errores Posibles
+#### 📛 Errores Posibles
 
 - 400 Bad Request: Datos inválidos o faltantes.
 
-###🔹 Inicio de Sesión (POST /api/auth/login)
-####📩 Body (JSON)
+### 🔹 Inicio de Sesión (POST /api/auth/login)
+#### 📩 Body (JSON)
 
 ```
 {
@@ -131,7 +131,7 @@ El backend valida el token antes de acceder a las rutas protegidas.
 }
 ```
 
-####📤 Respuesta Exitosa (200 - OK)
+#### 📤 Respuesta Exitosa (200 - OK)
 
 ```
 {
@@ -145,17 +145,17 @@ El backend valida el token antes de acceder a las rutas protegidas.
     "updatedAt": "2025-02-10T15:30:45.123Z"
 }
 ```
-####📛 Errores Posibles
+#### 📛 Errores Posibles
 
 - 400 Bad Request: Datos inválidos o faltantes.
 - 401 Unauthorized: Contraseña incorrecta o usuario no registrado.
 
 
-###🔹 Cerrar Sesión (POST /api/auth/logout)
+### 🔹 Cerrar Sesión (POST /api/auth/logout)
 
-####📩 Sin Body, solo se envía la petición.
+#### 📩 Sin Body, solo se envía la petición.
 
-####📤 Respuesta Exitosa (200 - OK)
+#### 📤 Respuesta Exitosa (200 - OK)
 
 ```
 {
