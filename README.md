@@ -121,7 +121,7 @@ El backend valida el token antes de acceder a las rutas protegidas.
 
 - 400 Bad Request: Datos inválidos o faltantes.
 
-### 🔹 Inicio de Sesión (POST /api/auth/login)
+### 🔹 Inicio de Sesión (POST /api/login)
 #### 📩 Body (JSON)
 
 ```
@@ -151,7 +151,7 @@ El backend valida el token antes de acceder a las rutas protegidas.
 - 401 Unauthorized: Contraseña incorrecta o usuario no registrado.
 
 
-### 🔹 Cerrar Sesión (POST /api/auth/logout)
+### 🔹 Cerrar Sesión (POST /api/logout)
 
 #### 📩 Sin Body, solo se envía la petición.
 
