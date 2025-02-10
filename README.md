@@ -75,7 +75,7 @@ El puerto seleccionado para el frontend es http://localhost5173
 - POST /api/logout → Cerrar sesión
 - GET /api/verify → Obtener datos del usuario autenticado
 
-###📌 Tareas
+### 📌 Tareas
 
 - GET /api/tasks → Listar tareas (requiere token)
 - GET /api/tasks/:id → Obtiene una tarea específica por su ID (requiere token)
@@ -89,6 +89,7 @@ El puerto seleccionado para el frontend es http://localhost5173
 Cada solicitud protegida incluye el encabezado:
 Authorization: TOKEN_SECRET
 El backend valida el token antes de acceder a las rutas protegidas.
+El token es guardado en las cookies 
 
 # 📌 Formato de peticiones (JSON)
 ### 🔹 Registro de Usuario (POST /api/register)
@@ -111,9 +112,9 @@ El backend valida el token antes de acceder a las rutas protegidas.
     "id": "65abc123def456ghi789jkl",
     "username": "usuarioEjemplo",
     "email": "usuario@example.com",
-    "createdAt": "2025-02-10T15:30:45.123Z",
-    "updatedAt": "2025-02-10T15:30:45.123Z"
-  }
+  },
+   "createdAt": "2025-02-10T15:30:45.123Z",
+   "updatedAt": "2025-02-10T15:30:45.123Z"
 }
 
 ```
